@@ -375,4 +375,21 @@ const bills = [
 
 // Start coding here
 
-const totalPaidByLocation;
+function summingValue(accumulator, currentObject) {
+
+    let duplicated = accumulator.filter(array => array.location === currentObject.location);
+
+    if (duplicated.length === 0) {
+        accumulator.push(currentObject);
+    } else {
+        let existingObject = duplicated[0];
+        existingObject.total += currentObject.total;
+    }
+    return accumulator;
+}
+
+
+const totalPaidByLocation = bills.reduce(summingValue, []);
+console.log(totalPaidByLocation);
+
+//คำตอบไม่ตรง
