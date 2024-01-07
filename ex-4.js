@@ -374,4 +374,22 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+
+function getTotalMembersExcludingNull(array) {
+  return array.filter(validatedMember).map(countMember);
+}
+
+function validatedMember(array) {
+  let totalMember = array.member !== null
+  return totalMember;
+}
+
+function countMember(callbackFn, array) {
+  return callbackFn(array).length;
+}
+
+const totalMembers = getTotalMembersExcludingNull(bills);
+
+console.log(totalMembers);
+
+//ยังทำไม่ได้ เพราะไม่เข้าใจมากพอ

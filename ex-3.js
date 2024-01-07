@@ -374,4 +374,18 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+
+function getMembersNameExcludingNull(array) {
+  return array.filter(validatedMember).map(validatedName);
+}
+
+function validatedMember(array) {
+  return array.member !== null;
+}
+
+function validatedName(array) {
+  return array.member.name;
+}
+
+const billMembers = getMembersNameExcludingNull(bills);
+console.log(billMembers);
