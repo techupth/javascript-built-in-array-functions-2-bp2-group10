@@ -374,3 +374,16 @@ const bills = [
 ];
 
 // Start coding here
+
+function getValue(array) {
+  let sumOfValue = array.reduce(summingValue, 0)
+  return sumOfValue;
+}
+
+function summingValue(accumulator, currentValue) {
+  return accumulator + currentValue.total;
+}
+
+let totalAmount = getValue(bills);
+
+console.log(`Total bill transaction is ${totalAmount}`);

@@ -375,4 +375,13 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+function getMemberExcludingNull(array) {
+  return array.filter(filteredObject);
+}
+
+function filteredObject(array) {
+  return array.member !== null;
+}
+
+const newBills = getMemberExcludingNull(bills);
+console.log(newBills);
